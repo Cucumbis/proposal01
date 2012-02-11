@@ -9,8 +9,10 @@ from game.gameData import *
 
 from pyglet.sprite import Sprite
 
-class mainMenuFrame(frames.basicFrame):
+class MainMenuFrame(frames.basicFrame):
     def __init__(self):
+        frames.basicFrame.__init__(self)        
+        
         self.background = Sprite(assets.mainMenuBackground,0,0)
         self.background.scale = float(setting.SCREEN_HEIGHT) / self.background.height
         self.playButton = Sprite(assets.mainMenuPlay,0,0)
@@ -34,7 +36,7 @@ class mainMenuFrame(frames.basicFrame):
         for event in eventManager.lastEvents:
             if (event.type == "mousedown" and event.value == 0):
                 if (eventManager.mouse.position.withinRect(self.playButton,self.playButton.width,self.playButton.height)):
-                    frameController.add("game",gameFrame(gameData()))
+                    frameController.add("game",GameFrame(GameData()))
                     frameController.rem("main")
     def draw(self):
         self.background.draw()

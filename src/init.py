@@ -82,6 +82,6 @@ def update(dt):
 pyglet.clock.schedule_interval(update, setting.FRAME_RATE)
 
 #Change this to test different frames
-frameController.add("main",frames.mainMenuFrame.mainMenuFrame())
+frameController.add("main",frames.mainMenuFrame.MainMenuFrame())
 
 pyglet.app.run()

@@ -14,8 +14,10 @@ import assets
 def isoDat(x,y):#Convert x,y coordinates to isometric coordinates
     x/=2;y/=2
     return V2(x*RAD2 - y*RAD2, y * RAD2 + x*RAD2)
-class gameFrame(basicFrame):
+class GameFrame(basicFrame):
     def __init__(self,gameData):
+        
+        basicFrame.__init__(self)          
         
         #The camera is basically a screen translation
         self.camera = V2()

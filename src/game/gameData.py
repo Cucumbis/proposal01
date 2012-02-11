@@ -1,5 +1,5 @@
 import assets
-class gameData():
+class GameData():
     def __init__(self):
         #This will normally be loaded from a file, for now
         #Default values will do
