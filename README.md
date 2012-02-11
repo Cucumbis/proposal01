@@ -1,5 +1,7 @@
 This is a draft game engine proposal by Cucumbis
 
+Run src/init.py to test the game
+
 Design)
 
 Each section of the game has a "frame". Each frame of the game is self-contained, it has a render and update function that allows it to update. Some example frames...
