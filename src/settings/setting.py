@@ -3,7 +3,7 @@
 #for now i'll just put in some default values
 
 SCREEN_WIDTH=1280
-SCREEN_HEIGHT=720
+SCREEN_HEIGHT=800
 
 TEXTURE_PACK="res/default"
 
