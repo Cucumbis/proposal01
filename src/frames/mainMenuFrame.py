@@ -9,6 +9,8 @@ from game.gameData import *
 
 from pyglet.sprite import Sprite
 
+#ATM this is not well documented, the reason being it will most
+#likely be changed and made more relevant to the game
 class MainMenuFrame(frames.basicFrame):
     def __init__(self):
         frames.basicFrame.__init__(self)        
@@ -26,8 +28,8 @@ class MainMenuFrame(frames.basicFrame):
     def update(self):
         self.playButton.x += (self.playButton.tx - self.playButton.x)/10
         if (abs(self.playButton.x - eventManager.mouse.position.x)<self.playButton.width/2):
-            self.playButton.y += (self.playButton.ty + (self.playButton.ty - eventManager.mouse.position.y)**3/20000.0 - self.playButton.y)/10
-            self.optionsButton.y += (self.optionsButton.ty + (self.optionsButton.ty - eventManager.mouse.position.y)**3/20000.0 - self.optionsButton.y)/10
+            self.playButton.y += (self.playButton.ty + (self.playButton.ty - eventManager.mouse.position.y)**3/80000.0 - self.playButton.y)/10
+            self.optionsButton.y += (self.optionsButton.ty + (self.optionsButton.ty - eventManager.mouse.position.y)**3/80000.0 - self.optionsButton.y)/10
         else:
             self.playButton.y += (self.playButton.ty - self.playButton.y)/10
             self.optionsButton.y += (self.optionsButton.ty - self.optionsButton.y)/10

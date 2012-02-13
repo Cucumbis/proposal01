@@ -38,6 +38,8 @@ def on_draw():
 #Initialize eventManager
 eventManager.init()
 
+#These are all to update the eventManager, which can be accessed by any part
+#of the game
 @window.event
 def on_key_press(symbol,mod):
     eventManager.keys[symbol] = 1
@@ -73,9 +75,7 @@ def on_mouse_release(x,y,button,modifiers):
     else:
         eventManager.mouse.middleDown = 0
         eventManager.lastEvents.append(eventManager.Event("mouseup",2))
-#this executes FRAME_RATE times a second, it updates all the frames
-#TODO before calling update, call another function and pass a list full of 
-#events (<key> down) then clear it after, this way it can act on one-time events
+#This is called FRAME_RATE times a second to update the frames (not render them)
 def update(dt):
     frameController.update()
     eventManager.lastEvents = []

@@ -8,6 +8,9 @@ addedFrames = {} #Stores frames that are to be added after next update
 removedFrames = [] #Frames to be removed after next update
 animateOutFrames = []
 animateInFrames = []
+#Called FRAME_RATE times a frame, this will do several things
+# - Update each frame
+# - Run animations on each frame
 def update():
     global hold,addedFrames,removedFrames
     hold += 1
@@ -40,6 +43,7 @@ def render():
         frame.draw()
         glPopMatrix()
     hold -= 1
+#Add a frame to the scene
 def add(name,frame,animate=True):
     global addedFrames
     addedFrames[name] = frame
@@ -47,6 +51,7 @@ def add(name,frame,animate=True):
         global animateInFrames
         animateInFrames.append(name)
         frame.position.x = setting.SCREEN_WIDTH*2
+#Remove a frame to the scene
 def rem(name,animate=True):
     if (animate):
         global animateOutFrames
