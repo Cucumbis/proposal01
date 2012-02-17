@@ -15,7 +15,7 @@ def update():
     global hold,addedFrames,removedFrames
     hold += 1
     for i in frames:
-        frames[i].update()
+        if frames[i].finished == 0:frames[i].update()
     for i in addedFrames:
         frames[i] = addedFrames[i]
         renderOrderFrames.append(frames[i])

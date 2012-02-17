@@ -40,6 +40,7 @@ class MainMenuFrame(frames.basicFrame):
                 if (eventManager.mouse.position.withinRect(self.playButton,self.playButton.width,self.playButton.height)):
                     frameController.add("game",GameFrame(GameData()))
                     frameController.rem("main")
+                    self.finished = 1
     def draw(self):
         self.background.draw()
         self.playButton.draw()
